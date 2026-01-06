@@ -1,0 +1,62 @@
+Day 26
+
+Source Code (Input) -----> Build Tool -----> Executable files (Output)
+
+Using build tool we convert the source code into executable files.
+
+C,C++ ---> make ---> .exe
+Java  ---> maven/nodeJS/Gradle/SBT ---> .jar/.war/.ear
+Python ---> python ---> .whl
+.NET -----> .NET compiler ----> .dll
+
+compiler for C => gcc
+compiler for C++ => g++
+compiler for java => javac
+
+.jar => java archive
+.war => web based archive (most widely used)
+.ear => enterprise based archive
+
+Build
+It is a binary or executable file or artifact before testing
+
+Release
+Release is a tested build which is ready for release to the customers
+
+Sanity/BVT(Build Verification Test)
+It is a basic functionality of a build that should never break
+
+Hotfix/Patch Build
+It is a critical fix which needs to be delivered to the customer within few hours. If we modified 5 files among 1000 files, only 5 files will be compiled and regenerates the build. It takes less time
+
+Load Build
+We compile the source code from scratch to generate the build. It takes more time.
+
+Release Note
+It consists of two things
+1) tag name
+2) known issues
+Devops engineer will prepare release notes.
+
+
+IMPORTANT
+What kind of issues(build issues) you faced while building the application? 
+Once the build was broken, we need to debug and identify why build is broken.
+-> If it is compilation issue(Syntax error issues) we need to work with developers to resolve the issue.
+-> If it is build environment issue, we need to debug and fix it. Environment issues maybe:
+	1) Memory is full on the server
+	2) CPU usage is high on the server
+	3) Version mis-match issue
+	4) Dependency issues
+	5) Slave machine is not available in Jenkins
+
+
+IMPORTANT
+Deployment Process
+(How do we do deployment?)
+(Have you worked on releases?)
+-> We support deployment to the QA, DEV, STAGE, PRODUCTION environment
+-> We deploy .war file to the web-based server(Apache Tomcat)
+-> We have written a shell script to deploy .war file automatically and scheduled this script using Jenkins job.
+-> To deploy to the test environment we need manager approval. To deploy to the production environment, we need CAB(Change Advisory Board) or SRE(Site Reliability Engineer) approval.
+-> Once in 15 days(i.e., Saturday Morning) we will deploy.
